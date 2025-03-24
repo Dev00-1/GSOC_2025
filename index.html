@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask API Call</title>
+</head>
+<body>
+    <h1>Flask API Response:</h1>
+    <p id="response"></p>
+
+    <script>
+        fetch('http://127.0.0.1:5000/api')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("response").innerText = data.message;
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
